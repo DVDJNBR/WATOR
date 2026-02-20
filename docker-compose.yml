@@ -26,4 +26,4 @@ services:
       - /opt/WATOR:/opt/WATOR
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/bin/docker:/usr/bin/docker
-      - /usr/bin/docker-compose:/usr/bin/docker-compose
+      - /usr/local/bin/docker-compose-v2:/usr/local/bin/docker-compose

@@ -34,7 +34,7 @@ class WebhookHandler(BaseHTTPRequestHandler):
             self.end_headers()
 
             result = subprocess.run(
-                ["bash", "-c", f"cd {PROJECT_PATH} && git pull origin main && docker-compose down && docker-compose up -d --build"],
+                ["bash", "-c", f"cd {PROJECT_PATH} && git pull origin main && /usr/local/bin/docker-compose down && /usr/local/bin/docker-compose up -d --build"],
                 capture_output=True,
                 text=True,
                 timeout=300
