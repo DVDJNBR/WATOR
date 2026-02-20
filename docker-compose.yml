@@ -14,3 +14,14 @@ services:
       - "80:80"
     depends_on:
       - backend
+
+  webhook:
+    build: ./deploy-webhook
+    ports:
+      - "9000:9000"
+    environment:
+      - DEPLOY_TOKEN=${DEPLOY_TOKEN}
+      - PROJECT_PATH=/opt/WATOR
+    volumes:
+      - /opt/WATOR:/opt/WATOR
+      - /var/run/docker.sock:/var/run/docker.sock

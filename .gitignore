@@ -6,3 +6,11 @@ __pycache__/
 dist/
 .env
 backend/venv/
+
+# Logs
+*.log
+backend/*.log
+frontend/*.log
+
+# Guide de déploiement (contient des infos sensibles)
+DEPLOIEMENT.md

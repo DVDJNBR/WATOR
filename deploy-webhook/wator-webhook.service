@@ -1,0 +1,17 @@
+[Unit]
+Description=WATOR Deployment Webhook Server
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/WATOR/deploy-webhook
+Environment="DEPLOY_TOKEN=YOUR_SECRET_TOKEN_HERE"
+Environment="PROJECT_PATH=/opt/WATOR"
+Environment="WEBHOOK_PORT=9000"
+ExecStart=/usr/bin/python3 /home/utilisateur/wator/deploy-webhook/webhook-server.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

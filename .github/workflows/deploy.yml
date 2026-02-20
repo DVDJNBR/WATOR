@@ -1,0 +1,19 @@
+name: Deploy to OVH VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Trigger deployment on VPS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger webhook on VPS
+        run: |
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-Deploy-Token: ${{ secrets.DEPLOY_TOKEN }}" \
+            https://wator.dvdjnbr.fr/deploy
